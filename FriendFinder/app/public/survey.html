@@ -13,24 +13,43 @@
 </head>
 
 <body>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Here's Your Match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="matchName" class="modal-body">
+                    <img id="matchImg" class="img-fluid" style="max-width:100%; height:auto;" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="jumbotron">
             <h1>Fill Out The Survey Below</h1>
             <hr>
             <h2><strong>About You</strong></h2>
             <h3>Name (Required)</h3>
-            <input type="text" id="name" class="form-control"required>
+            <input type="text" id="friendName" class="form-control" required>
             <h3>Link to Photo (Required)</h3>
-            <input type="text" id="photo" class="form-control"required>
+            <input type="text" id="friendPhoto" class="form-control" required>
             <hr>
         </div>
-        <!-- <div class="row"> -->
 
 
         <div class="form-group">
             <h2>Question 1</h2>
             <h3>I'm more likely to take walks during the week.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest1">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -41,7 +60,7 @@
         <div class="form-group">
             <h2>Question 2</h2>
             <h3>I really enjoy cooking from scracth.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest2">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -52,7 +71,7 @@
         <div class="form-group">
             <h2>Question 3</h2>
             <h3>I love pets.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest3">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -63,7 +82,7 @@
         <div class="form-group">
             <h2>Question 4</h2>
             <h3>My friends would describe me as an introvert.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest4">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -74,7 +93,7 @@
         <div class="form-group">
             <h2>Question 5</h2>
             <h3>I'm ready for marriage within the next 2 years.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest5">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -85,7 +104,7 @@
         <div class="form-group">
             <h2>Question 6</h2>
             <h3>I'm more likely to go to my parents for advise over a therapist.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest6">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -96,7 +115,7 @@
         <div class="form-group">
             <h2>Question 7</h2>
             <h3>I would like to have children of my own soon.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest7">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -107,7 +126,7 @@
         <div class="form-group">
             <h2>Question 8</h2>
             <h3>I rather listen to music then reading a book.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest8">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -118,7 +137,7 @@
         <div class="form-group">
             <h2>Question 9</h2>
             <h3>I would like to travel the world before moving in together.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest9">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -129,7 +148,7 @@
         <div class="form-group">
             <h2>Question 10</h2>
             <h3>I hate going to the movies.</h3>
-            <select class="list-group" id="surveyList">
+            <select class="list-group" id="quest10">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3</option>
@@ -138,60 +157,109 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal"
+            id="submit">Submit</button>
         <hr>
 
-</body>
 
-<script type="text/javascript">
+        <script type="text/javascript">
 
-    function runSurveyQuery() {
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
 
-        $.ajax({ url: "/api/survey", method: "GET" })
-            .then(function (friends) {
+                // function checkCompatibility() {
+                //     var match = true;
+                //     $(".form-control").each(function () {
+                //         if ($(this).val() === "") {
+                //             match = false;
+                //         }
+                //     });
+                //     $(".list-goup").each(function () {
+                //         if ($(this).val() === "") {
+                //             match = false;
+                //         }
+                //     });
+                //     return match;
+                // }
+                // if (checkCompatibility()) {
+                var userInput = {
+                    name: $("#friendName").val(),
+                    photo: $("#friendPhoto").val(),
+                    scores: [
+                        parseInt($("#quest1").val()),
+                        parseInt($("#quest2").val()),
+                        parseInt($("#quest3").val()),
+                        parseInt($("#quest4").val()),
+                        parseInt($("#quest5").val()),
+                        parseInt($("#quest6").val()),
+                        parseInt($("#quest7").val()),
+                        parseInt($("#quest8").val()),
+                        parseInt($("#quest9").val()),
+                        parseInt($("#quest10").val())
+                    ]
+                };
+                console.log(userInput);
 
-
-                console.log(friends);
-                console.log("------------------------------------");
-
-
-                for (var i = 0; i < friends.length; i++) {
-
-
-                    var surveyList = $("#surveyList");
-
-
-                    var listItem = $("<li class='list-group-item mt-4'>");
-
-                    listItem.append(
-                        $("<h2>").text("Statement #" + (i + 1)),
-                        $("<hr>"),
-                        $("<h2>").text("Name: " + friends[i].name),
-                        $("<h2>").text("Photo: " + friends[i].photo),
-                        $("<h2>").text("Score: " + friends[i].score)
-                    );
-
-                    surveyList.append(listItem);
-                }
+                $.post("/api/friends", userInput, function (data) {
+                    console.log(data)
+                    $("#matchName").append(data.name);
+                    $("#matchImg").attr("src", data.photo);
+                    $("#exampleModal").modal("toggle")
+                });
+                // } else {
+                // alert("All fields required!");
+                // }
+                // return false;
             });
-    }
-
-    function clearSurvey() {
-        alert("Clearing...");
 
 
-        $.ajax({ url: "/api/clear", method: "POST" }).then(function () {
-            $("#surveyList").empty();
-        });
-    }
+            // function runSurveyQuery() {
 
-    $("#clear").on("click", clearSurvey);
-
-    runSurveyQuery();
+            //     $.ajax({ url: "/api/survey", method: "GET" })
+            //         .then(function (friends) {
 
 
+            //             console.log(friends);
+            //             console.log("------------------------------------");
 
-</script>
+
+            //             for (var i = 0; i < friends.length; i++) {
+
+
+            //                 var quest = $("#surveyList");
+
+
+            //                 var listItem = $("<li class='list-group-item mt-4'>");
+
+            //                 listItem.append(
+            //                     $("<h2>").text("Statement #" + (i + 1)),
+            //                     $("<hr>"),
+            //                     $("<h2>").text("Name: " + friends[i].name),
+            //                     $("<h2>").text("Photo: " + friends[i].photo),
+            //                     $("<h2>").text("Score: " + friends[i].score)
+            //                 );
+
+            //                 surveyList.append(listItem);
+            //             }
+            //         });
+            // }
+
+            // function clearSurvey() {
+            //     alert("Clearing...");
+
+
+            //     $.ajax({ url: "/api/clear", method: "POST" }).then(function () {
+            //         $("#surveyList").empty();
+            //     });
+            // }
+
+            // $("#clear").on("click", clearSurvey);
+
+            // runSurveyQuery();
+
+        </script>
+    </div>
+</body>
 
 </html>
 

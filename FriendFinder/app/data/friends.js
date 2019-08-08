@@ -1,7 +1,7 @@
 var friends = [
     {
         name: "Ahmed",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://cdn.pixabay.com/photo/2016/11/01/18/45/silhouette-1789199_960_720.png",
         scores: [
             5,
             1,
@@ -17,7 +17,7 @@ var friends = [
     },
     {
         name: "Nai Lang",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://cdn.pixabay.com/photo/2016/11/01/18/45/silhouette-1789199_960_720.png",
         scores: [
             4,
             1,
@@ -33,7 +33,7 @@ var friends = [
     },
     {
         name: "Hunter",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://cdn.pixabay.com/photo/2016/11/01/18/45/silhouette-1789199_960_720.png",
         scores: [
             5,
             4,
@@ -49,7 +49,7 @@ var friends = [
     },
     {
         name: "Idris",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://cdn.pixabay.com/photo/2016/11/01/18/45/silhouette-1789199_960_720.png",
         scores: [
             5,
             4,
@@ -65,7 +65,7 @@ var friends = [
     },
     {
         name: "Curry",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://cdn.pixabay.com/photo/2016/11/01/18/45/silhouette-1789199_960_720.png",
         scores: [
             5,
             5,
@@ -81,7 +81,7 @@ var friends = [
     },
     {
         name: "Mr. Cooper",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://cdn.pixabay.com/photo/2016/11/01/18/45/silhouette-1789199_960_720.png",
         scores: [
             2,
             4,

@@ -167,21 +167,6 @@
             $("#submit").on("click", function (event) {
                 event.preventDefault();
 
-                // function checkCompatibility() {
-                //     var match = true;
-                //     $(".form-control").each(function () {
-                //         if ($(this).val() === "") {
-                //             match = false;
-                //         }
-                //     });
-                //     $(".list-goup").each(function () {
-                //         if ($(this).val() === "") {
-                //             match = false;
-                //         }
-                //     });
-                //     return match;
-                // }
-                // if (checkCompatibility()) {
                 var userInput = {
                     name: $("#friendName").val(),
                     photo: $("#friendPhoto").val(),
@@ -206,56 +191,7 @@
                     $("#matchImg").attr("src", data.photo);
                     $("#exampleModal").modal("toggle")
                 });
-                // } else {
-                // alert("All fields required!");
-                // }
-                // return false;
             });
-
-
-            // function runSurveyQuery() {
-
-            //     $.ajax({ url: "/api/survey", method: "GET" })
-            //         .then(function (friends) {
-
-
-            //             console.log(friends);
-            //             console.log("------------------------------------");
-
-
-            //             for (var i = 0; i < friends.length; i++) {
-
-
-            //                 var quest = $("#surveyList");
-
-
-            //                 var listItem = $("<li class='list-group-item mt-4'>");
-
-            //                 listItem.append(
-            //                     $("<h2>").text("Statement #" + (i + 1)),
-            //                     $("<hr>"),
-            //                     $("<h2>").text("Name: " + friends[i].name),
-            //                     $("<h2>").text("Photo: " + friends[i].photo),
-            //                     $("<h2>").text("Score: " + friends[i].score)
-            //                 );
-
-            //                 surveyList.append(listItem);
-            //             }
-            //         });
-            // }
-
-            // function clearSurvey() {
-            //     alert("Clearing...");
-
-
-            //     $.ajax({ url: "/api/clear", method: "POST" }).then(function () {
-            //         $("#surveyList").empty();
-            //     });
-            // }
-
-            // $("#clear").on("click", clearSurvey);
-
-            // runSurveyQuery();
 
         </script>
     </div>

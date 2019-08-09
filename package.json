@@ -1,0 +1,26 @@
+{
+  "name": "friend-finder-app",
+  "version": "1.0.0",
+  "description": "* Description: Basic app demonstrating Node and Express with jQuery. Overall purpose is to help user find a \"friend\" that they are compatible with, by statements about the user. User will click on \"Take a Survey\" and be directed to a page with 10 \"Statements\". The user will choose from a scale (1-5) with 1 being (Strongly Disagree) and 5 being (Strongly Agree) based on each statement about themselves. Once completed and submitted, the user will see the \"friend\" they are most compatible with.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "modal": "^1.2.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarfulah/Friend-Finder-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sarfulah/Friend-Finder-App/issues"
+  },
+  "homepage": "https://github.com/Sarfulah/Friend-Finder-App#readme"
+}

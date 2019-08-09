@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Here's Your Match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="matchName" class="modal-body">
+                    <img id="matchImg" class="img-fluid" style="max-width:100%; height:auto;" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Fill Out The Survey Below</h1>
+            <hr>
+            <h2><strong>About You</strong></h2>
+            <h3>Name (Required)</h3>
+            <input type="text" id="friendName" class="form-control" required>
+            <h3>Link to Photo (Required)</h3>
+            <input type="text" id="friendPhoto" class="form-control" required>
+            <hr>
+        </div>
+
+
+        <div class="form-group">
+            <h2>Question 1</h2>
+            <h3>I'm more likely to take walks during the week.</h3>
+            <select class="list-group" id="quest1">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 2</h2>
+            <h3>I really enjoy cooking from scracth.</h3>
+            <select class="list-group" id="quest2">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 3</h2>
+            <h3>I love pets.</h3>
+            <select class="list-group" id="quest3">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 4</h2>
+            <h3>My friends would describe me as an introvert.</h3>
+            <select class="list-group" id="quest4">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 5</h2>
+            <h3>I'm ready for marriage within the next 2 years.</h3>
+            <select class="list-group" id="quest5">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 6</h2>
+            <h3>I'm more likely to go to my parents for advise over a therapist.</h3>
+            <select class="list-group" id="quest6">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 7</h2>
+            <h3>I would like to have children of my own soon.</h3>
+            <select class="list-group" id="quest7">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 8</h2>
+            <h3>I rather listen to music then reading a book.</h3>
+            <select class="list-group" id="quest8">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 9</h2>
+            <h3>I would like to travel the world before moving in together.</h3>
+            <select class="list-group" id="quest9">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <h2>Question 10</h2>
+            <h3>I hate going to the movies.</h3>
+            <select class="list-group" id="quest10">
+                <option>1 (Strongly Disagree)</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5 (Strongly Agree)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal"
+            id="submit">Submit</button>
+        <hr>
+
+
+        <script type="text/javascript">
+
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+
+                var userInput = {
+                    name: $("#friendName").val(),
+                    photo: $("#friendPhoto").val(),
+                    scores: [
+                        parseInt($("#quest1").val()),
+                        parseInt($("#quest2").val()),
+                        parseInt($("#quest3").val()),
+                        parseInt($("#quest4").val()),
+                        parseInt($("#quest5").val()),
+                        parseInt($("#quest6").val()),
+                        parseInt($("#quest7").val()),
+                        parseInt($("#quest8").val()),
+                        parseInt($("#quest9").val()),
+                        parseInt($("#quest10").val())
+                    ]
+                };
+                console.log(userInput);
+
+                $.post("/api/friends", userInput, function (data) {
+                    console.log(data)
+                    $("#matchName").append(data.name);
+                    $("#matchImg").attr("src", data.photo);
+                    $("#exampleModal").modal("toggle")
+                });
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>
+
+</html>
